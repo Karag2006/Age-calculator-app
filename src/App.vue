@@ -1,12 +1,21 @@
 <script setup>
-    import Attribution from "./components/Attribution.vue";
+    import {
+        Attribution,
+        Card,
+        DateForm,
+        DateTranslator,
+        Result,
+    } from "./components";
     import { useAppStore } from "./Store/AppStore";
 
     const store = useAppStore();
 </script>
 
 <template>
-    <main>
-        <Attribution />
-    </main>
+    <Card>
+        <DateForm />
+        <DateTranslator />
+        <Result />
+    </Card>
+    <Attribution />
 </template>

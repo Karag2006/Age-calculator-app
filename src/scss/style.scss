@@ -5,3 +5,13 @@ body {
     place-content: center;
     height: 100vh;
 }
+
+.card {
+    margin: 1rem;
+    padding: 1rem;
+
+    border-radius: 1rem;
+    border-bottom-right-radius: 5rem;
+
+    background: white;
+}

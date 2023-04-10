@@ -2,9 +2,7 @@
 
 <template>
     <div class="seperator">
-        <button>
-            <img src="../assets/images/icon-arrow.svg" alt="Arrow Icon" />
-        </button>
+        <button></button>
     </div>
 </template>
 
@@ -20,18 +18,39 @@
 
         button {
             position: absolute;
-            top: -1.25rem;
-            left: calc(50% - 1.5rem);
+            top: -2rem;
+            left: calc(50% - 2rem);
 
-            height: 3rem;
+            height: 4rem;
             aspect-ratio: 1;
 
-            padding: 0.8rem;
+            padding: 1rem;
 
             border: 0;
             border-radius: 50%;
 
             background: var(--purple);
+
+            cursor: pointer;
+
+            &:hover {
+                background: var(--off-black);
+            }
+
+            &::before {
+                content: url(../assets/images/icon-arrow.svg);
+                position: absolute;
+                top: 0.5rem;
+                left: 0.5rem;
+
+                svg {
+                    height: 22px;
+                }
+            }
+
+            @media screen and (min-width: 400px) {
+                left: calc(100% - 4rem);
+            }
         }
     }
 </style>

@@ -7,6 +7,18 @@ export const useAppStore = defineStore('app', () => {
         month: '',
         year: ''
     })
+    const classes = ref({
+        day: '',
+        month: '',
+        year: ''
+    })
 
-    return {date}
+    const errors = ref({
+        day: '',
+        month: '',
+        year: ''
+    })
+
+
+    return {date, classes, errors}
 })

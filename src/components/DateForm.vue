@@ -13,6 +13,12 @@
 <style lang="scss">
     form {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 5.8rem 5.8rem 5.8rem;
+        gap: 0.5rem;
+
+        @media screen and (min-width: 400px) {
+            grid-template-columns: 10rem 10rem 10rem 10rem;
+            gap: 2rem;
+        }
     }
 </style>

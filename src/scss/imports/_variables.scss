@@ -1,0 +1,16 @@
+:root {
+    --font-family: "Poppins", sans-serif;
+    --off-white: hsl(0, 0%, 94%);
+    --light-gray: hsl(0, 0%, 86%);
+    --smokey-gray: hsl(0, 1%, 44%);
+    --off-black: hsl(0, 0%, 8%);
+    --purple: hsl(259, 100%, 65%);
+    --light-red: hsl(0, 100%, 67%);
+
+    --gray-blue: hsl(220, 15%, 55%);
+    --dark-blue: hsl(218, 44%, 22%);
+
+    --font-color: var(--smokey-gray);
+    --error-color: var(--light-red);
+    --background-color: var(--light-gray);
+}

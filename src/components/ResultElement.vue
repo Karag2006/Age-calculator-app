@@ -1,10 +1,13 @@
 <script setup>
+    import { useAppStore } from "../Store/AppStore";
     defineProps(["name"]);
+
+    const store = useAppStore();
 </script>
 
 <template>
     <div class="result--element">
-        <span class="result--element-number">-- </span>
+        <span class="result--element-number">{{ store.result[name] }}</span>
         <span class="result--element-name">{{ name }}</span>
     </div>
 </template>
@@ -15,6 +18,7 @@
 
         &-number {
             color: var(--purple);
+            margin-right: 0.5rem;
         }
 
         &-name {

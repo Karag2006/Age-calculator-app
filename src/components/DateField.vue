@@ -16,6 +16,8 @@
             :name="props.name"
             v-model="store.date[props.name]"
             :placeholder="props.placeholder"
+            @focus="store.formElementFocus(props.name)"
+            @blur="store.formElementBlur(props.name)"
         />
         <span class="error" v-if="store.errors[props.name]">{{
             store.errors[props.name]
@@ -31,8 +33,8 @@
 
             font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 0.2rem;
-            color: var(--light-gray);
+            letter-spacing: 0.1rem;
+            color: var(--smokey-gray);
             &.active {
                 color: var(--off-black);
             }
@@ -54,14 +56,15 @@
             border-radius: 0.5rem;
 
             &::placeholder {
-                color: var(--light-gray);
+                color: var(--smokey-gray);
             }
 
             &.error {
                 border-color: var(--error-color);
             }
 
-            &:focus {
+            &:focus,
+            &:hover {
                 outline: none;
                 border-color: var(--purple);
 
@@ -72,8 +75,9 @@
         }
         span {
             display: block;
-            font-size: 0.7rem;
-            font-weight: 400;
+            margin-top: 0.5rem;
+            font-size: 0.5rem;
+            font-weight: 700;
             &.error {
                 color: var(--error-color);
             }

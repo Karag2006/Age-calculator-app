@@ -1,8 +1,16 @@
-<script setup></script>
+<script setup>
+    import { useAppStore } from "../Store/AppStore";
+    const store = useAppStore();
+</script>
 
 <template>
     <div class="seperator">
-        <button></button>
+        <button type="submit">
+            <img
+                src="../assets/images/icon-arrow.svg"
+                alt="Arrow Icon pointing at Result"
+            />
+        </button>
     </div>
 </template>
 
@@ -35,17 +43,6 @@
 
             &:hover {
                 background: var(--off-black);
-            }
-
-            &::before {
-                content: url(../assets/images/icon-arrow.svg);
-                position: absolute;
-                top: 0.5rem;
-                left: 0.5rem;
-
-                svg {
-                    height: 22px;
-                }
             }
 
             @media screen and (min-width: 400px) {

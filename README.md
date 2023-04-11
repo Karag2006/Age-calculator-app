@@ -41,8 +41,8 @@ Users should be able to:
 
 ### Links
 
--   Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/age-calculator-app-9Eg--l5q8Q)
--   Live Site URL: [Add live site URL here](https://stunning-belekoy-80ce24.netlify.app/)
+-   Solution URL: [Frontend Mentor Solution Page](https://www.frontendmentor.io/solutions/age-calculator-app-9Eg--l5q8Q)
+-   Live Site URL: [Live Application](https://stunning-belekoy-80ce24.netlify.app/)
 
 ## My process
 

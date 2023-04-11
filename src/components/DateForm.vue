@@ -21,7 +21,7 @@
         grid-template-columns: 5.8rem 5.8rem 5.8rem;
         gap: 0.5rem;
 
-        @media screen and (min-width: 400px) {
+        @media screen and (min-width: 840px) {
             grid-template-columns: 10rem 10rem 10rem 10rem;
             gap: 2rem;
         }

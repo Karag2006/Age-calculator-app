@@ -6,8 +6,8 @@ import {
     differenceInYears, 
     subYears, 
     subMonths,
-    addMonths,
-    addDays
+    isFuture,
+    getDaysInMonth
 } from 'date-fns'
 
 export const useAppStore = defineStore('app', () => {
@@ -44,31 +44,58 @@ export const useAppStore = defineStore('app', () => {
                 classes.value[item] = 'error'
                 state = false;
             }
-            else if(isNaN(date.value[item])) {
+        })
+        return state;
+    }
+
+
+    const checkNumbers = function(){
+        let state = true;
+        items.forEach((item) => {
+            if(isNaN(date.value[item])) {
                 errors.value[item] = "Must be a valid " + item;
                 classes.value[item] = 'error'
                 state = false;
+            } else if (item == 'year') {
+                console.log(currentDate.value.getFullYear())
+                if (date.value[item] > currentDate.value.getFullYear()) {
+                errors.value[item] = "Must be in the past";
+                classes.value[item] = 'error'
+                state = false;
+                }
+            }
+            else if (item == 'month'){
+                if (date.value[item] > 12 || date.value[item] < 1) {
+                errors.value[item] = "Must be a valid Month";
+                classes.value[item] = 'error'
+                state = false;
+                }
+            }
+            else if (item == 'day') {
+                if (date.value.day < 1 || date.value.day > getDaysInMonth(new Date(date.value.year, date.value.month -1))) {
+                    errors.value[item] = "Must be a valid Day";
+                    classes.value[item] = 'error'
+                    state = false;
+                }
             }
         })
         return state;
     }
 
     const validateDate = function(){
-        if(!checkPresence()) {
+        if(!checkPresence()) 
             return false
-        }
-        if(date.value.month > 12){
-            errors.value.month = "Must be a valid month";
-            classes.value.month = 'error'
-            return false
-        }
-        if(date.value.day > 31){
-            errors.value.day = "Must be a valid day";
-            classes.value.day = 'error'
-            return false
-        }
+        
+        if(!checkNumbers())
+            return false;
+
         let validationDate = new Date(date.value.year, date.value.month -1, date.value.day);
-        console.log(validationDate);
+        if(isFuture(validationDate)){
+            errors.value.year = "Must be in the past";
+            classes.value.year = 'error'
+            return false;
+        }
+
         return validationDate;
     }
 

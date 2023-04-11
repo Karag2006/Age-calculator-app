@@ -37,16 +37,29 @@
             border: 0;
             border-radius: 50%;
 
-            background: var(--purple);
+            background-color: var(--purple);
+            transition-property: background;
+            transition-duration: 5s;
+            transition-timing-function: linear;
 
             cursor: pointer;
 
-            &:hover {
-                background: var(--off-black);
+            &:hover,
+            &:focus {
+                outline: 0;
+                background-color: var(--off-black);
             }
 
-            @media screen and (min-width: 400px) {
-                left: calc(100% - 4rem);
+            @media screen and (min-width: 840px) {
+                top: -3rem;
+                height: 6rem;
+                left: calc(100% - 6rem);
+                padding: 1.5rem;
+
+                img {
+                    height: 100%;
+                    aspect-ratio: 1;
+                }
             }
         }
     }

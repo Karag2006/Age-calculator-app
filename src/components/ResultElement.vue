@@ -16,6 +16,10 @@
     .result--element {
         margin-block: -0.5rem;
 
+        @media screen and (min-width: 400px) {
+            margin-block: -1.5rem;
+        }
+
         &-number {
             color: var(--purple);
             margin-right: 0.5rem;

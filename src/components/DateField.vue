@@ -78,8 +78,14 @@
             margin-top: 0.5rem;
             font-size: 0.5rem;
             font-weight: 700;
+
             &.error {
                 color: var(--error-color);
+            }
+
+            @media screen and (min-width: 400px) {
+                margin-top: 0.7rem;
+                font-size: 0.7rem;
             }
         }
     }

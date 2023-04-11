@@ -39,8 +39,8 @@
 
             background-color: var(--purple);
             transition-property: background;
-            transition-duration: 5s;
-            transition-timing-function: linear;
+            transition-duration: 0.5s;
+            transition-timing-function: ease-in-out;
 
             cursor: pointer;
 
